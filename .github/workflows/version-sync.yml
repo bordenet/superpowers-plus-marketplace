@@ -6,6 +6,12 @@
 name: Version Sync
 
 on:
+  # Temporary push trigger to bootstrap workflow registration
+  # GitHub requires a successful run before recognizing dispatch triggers
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/version-sync.yml'
   repository_dispatch:
     types: [version-update]
   workflow_dispatch:
@@ -32,31 +38,37 @@ jobs:
           if [ "${{ github.event_name }}" == "repository_dispatch" ]; then
             VERSION="${{ github.event.client_payload.version }}"
             SOURCE="${{ github.event.client_payload.source }}"
-          else
+          elif [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
             VERSION="${{ inputs.version }}"
             SOURCE="manual"
+          else
+            # Push event (bootstrap run) - skip version update
+            VERSION=""
+            SOURCE="bootstrap"
           fi
           echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
           echo "SOURCE=$SOURCE" >> $GITHUB_OUTPUT
           echo "Received version: $VERSION from $SOURCE"
 
       - name: Update marketplace.json
+        if: steps.version.outputs.VERSION != ''
         run: |
           VERSION="${{ steps.version.outputs.VERSION }}"
-          
+
           # Update superpowers-plus version in marketplace.json
           jq --arg v "$VERSION" '(.plugins[] | select(.name == "superpowers-plus")).version = $v' \
             .claude-plugin/marketplace.json > tmp.json
           mv tmp.json .claude-plugin/marketplace.json
-          
+
           echo "Updated superpowers-plus to version $VERSION"
           cat .claude-plugin/marketplace.json
 
       - name: Commit and push
+        if: steps.version.outputs.VERSION != ''
         run: |
           VERSION="${{ steps.version.outputs.VERSION }}"
           SOURCE="${{ steps.version.outputs.SOURCE }}"
-          
+
           # Check if there are changes
           if git diff --quiet .claude-plugin/marketplace.json; then
             echo "No changes to commit (version already up to date)"
@@ -76,10 +88,14 @@ Triggered by: $SOURCE"
         run: |
           VERSION="${{ steps.version.outputs.VERSION }}"
           SOURCE="${{ steps.version.outputs.SOURCE }}"
-          
+
           echo "## Marketplace Version Sync" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- **Plugin:** superpowers-plus" >> $GITHUB_STEP_SUMMARY
-          echo "- **Version:** $VERSION" >> $GITHUB_STEP_SUMMARY
-          echo "- **Source:** $SOURCE" >> $GITHUB_STEP_SUMMARY
-
+          if [ -z "$VERSION" ]; then
+            echo "- **Status:** Bootstrap run (workflow registration)" >> $GITHUB_STEP_SUMMARY
+            echo "- **Note:** dispatch triggers should now be available" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- **Plugin:** superpowers-plus" >> $GITHUB_STEP_SUMMARY
+            echo "- **Version:** $VERSION" >> $GITHUB_STEP_SUMMARY
+            echo "- **Source:** $SOURCE" >> $GITHUB_STEP_SUMMARY
+          fi
