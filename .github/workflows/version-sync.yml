@@ -1,5 +1,6 @@
 # Receives version update dispatches from superpowers-plus
 # Updates the version in marketplace.json and commits
+# Supports both repository_dispatch (automated) and workflow_dispatch (manual)
 
 name: Version Sync
 
@@ -11,7 +12,6 @@ on:
       version:
         description: 'Version to set (e.g., 2.2.0)'
         required: true
-        type: string
 
 permissions:
   contents: write
