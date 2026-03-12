@@ -78,9 +78,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .claude-plugin/marketplace.json
-          git commit -m "chore: bump superpowers-plus to $VERSION
-
-Triggered by: $SOURCE"
+          git commit -m "chore: bump superpowers-plus to $VERSION (via $SOURCE)"
           git push
           echo "Committed version update"
 
