@@ -26,9 +26,8 @@
         "url": "https://github.com/bordenet/superpowers-plus.git"
       },
       "description": "Extended domain skills: wiki editing, issue tracking, security audits, TypeScript patterns, AI text quality",
-      "version": "2.1.0",
+      "version": "2.1.2",
       "strict": true
     }
   ]
 }
-
