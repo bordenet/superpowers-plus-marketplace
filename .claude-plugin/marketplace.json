@@ -5,27 +5,17 @@
     "email": "bordenet@users.noreply.github.com"
   },
   "metadata": {
-    "description": "Extended skills for wiki editing, issue tracking, security audits, and AI text quality",
+    "description": "95 skills across 9 domains: engineering, productivity, wiki, writing, observability, issue-tracking, security, research, experimental",
     "version": "1.0.0"
   },
   "plugins": [
-    {
-      "name": "superpowers",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/obra/superpowers.git"
-      },
-      "description": "PREREQUISITE: Core skills library by Jesse Vincent - TDD, debugging, collaboration patterns",
-      "version": "5.0.1",
-      "strict": true
-    },
     {
       "name": "superpowers-plus",
       "source": {
         "source": "url",
         "url": "https://github.com/bordenet/superpowers-plus.git"
       },
-      "description": "Extended domain skills: wiki editing, issue tracking, security audits, TypeScript patterns, AI text quality",
+      "description": "95 skills across 9 domains: engineering gates, wiki pipeline, issue tracking, security audits, AI slop detection, productivity orchestration",
       "version": "2.6.0",
       "strict": true
     }
