@@ -2,7 +2,7 @@
 
 Claude Code plugin marketplace for [superpowers-plus](https://github.com/bordenet/superpowers-plus) — 95 skills across engineering, wiki, issue tracking, security, writing, productivity, observability, research, and experimental domains.
 
-Built on [bordenet/superpowers](https://github.com/bordenet/superpowers), a maintained fork of obra/superpowers by Jesse Vincent.
+Includes all [obra/superpowers](https://github.com/obra/superpowers) skills by Jesse Vincent, bundled directly in superpowers-plus as of v2.6.0.
 
 ## Installation
 
@@ -27,10 +27,10 @@ Add this marketplace to Claude Code:
 - 95 skills across 9 domains
 - Engineering (38): commit gates, code review battery, TDD, debugging, feature development, debate, branch conventions
 - Productivity (20): thinking-orchestrator, adversarial-search, think-twice, todo management, skill authoring
-- Wiki (9): orchestrator pipeline, verify, refactor, content coherence, secret audit, link verification
+- Wiki (8): orchestrator pipeline, verify, refactor, content coherence, secret audit, link verification
 - Writing (8): AI slop detection/elimination, professional language audit, markdown discipline
 - Observability (8): evolution loop, exhaustive audit, completeness checks, holistic repo verification
-- Issue Tracking (6): authoring, editing, link verification, comment debunker
+- Issue Tracking (5): authoring, editing, link verification, comment debunker
 - Security (4): repo security scan, public-repo IP audit, wiki instruction guard, security upgrade
 - Research (3): Perplexity integration, expert interviewer, incorporating research
 - Experimental (1): self-prompting
@@ -66,7 +66,6 @@ superpowers-plus-marketplace/
 
 - **Issues:** https://github.com/bordenet/superpowers-plus-marketplace/issues
 - **superpowers-plus:** https://github.com/bordenet/superpowers-plus
-- **bordenet/superpowers (base):** https://github.com/bordenet/superpowers
 
 ## License
 
