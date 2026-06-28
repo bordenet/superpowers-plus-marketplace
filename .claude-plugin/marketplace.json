@@ -5,7 +5,7 @@
     "email": "bordenet@users.noreply.github.com"
   },
   "metadata": {
-    "description": "95 skills across 9 domains: engineering, productivity, wiki, writing, observability, issue-tracking, security, research, experimental",
+    "description": "102 skills across 9 domains: engineering, productivity, wiki, writing, observability, issue-tracking, security, research, experimental",
     "version": "1.0.0"
   },
   "plugins": [
@@ -15,7 +15,7 @@
         "source": "url",
         "url": "https://github.com/bordenet/superpowers-plus.git"
       },
-      "description": "95 skills across 9 domains: engineering gates, wiki pipeline, issue tracking, security audits, AI slop detection, productivity orchestration",
+      "description": "102 skills across 9 domains: engineering gates, wiki pipeline, issue tracking, security audits, AI slop detection, productivity orchestration",
       "version": "5.1.0",
       "strict": true
     }

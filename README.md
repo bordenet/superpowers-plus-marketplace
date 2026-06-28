@@ -1,6 +1,6 @@
 # superpowers-plus-marketplace
 
-Claude Code plugin marketplace for [superpowers-plus](https://github.com/bordenet/superpowers-plus) — 95 skills across engineering, wiki, issue tracking, security, writing, productivity, observability, research, and experimental domains.
+Claude Code plugin marketplace for [superpowers-plus](https://github.com/bordenet/superpowers-plus) — 102 skills across engineering, wiki, issue tracking, security, writing, productivity, observability, research, and experimental domains.
 
 Includes all [obra/superpowers](https://github.com/obra/superpowers) skills by Jesse Vincent, bundled directly in superpowers-plus as of v2.6.0.
 
@@ -16,7 +16,7 @@ Add this marketplace to Claude Code:
 
 ### superpowers-plus
 
-**Description:** 95 skills across 9 domains that enforce the practices AI coding assistants otherwise skip: gates, review pipelines, investigation protocols, and quality loops.
+**Description:** 102 skills across 9 domains that enforce the practices AI coding assistants otherwise skip: gates, review pipelines, investigation protocols, and quality loops.
 
 **Install:**
 ```bash
@@ -24,14 +24,14 @@ Add this marketplace to Claude Code:
 ```
 
 **What you get:**
-- 95 skills across 9 domains
-- Engineering (38): commit gates, code review battery, TDD, debugging, feature development, debate, branch conventions
-- Productivity (20): thinking-orchestrator, adversarial-search, think-twice, todo management, skill authoring
+- 102 skills across 9 domains
+- Engineering (42): commit gates, code review battery, TDD, debugging, feature development, debate, branch conventions
+- Productivity (21): thinking-orchestrator, adversarial-search, think-twice, todo management, skill authoring
 - Wiki (8): orchestrator pipeline, verify, refactor, content coherence, secret audit, link verification
 - Writing (8): AI slop detection/elimination, professional language audit, markdown discipline
-- Observability (8): evolution loop, exhaustive audit, completeness checks, holistic repo verification
+- Observability (9): evolution loop, exhaustive audit, completeness checks, holistic repo verification
 - Issue Tracking (5): authoring, editing, link verification, comment debunker
-- Security (4): repo security scan, public-repo IP audit, wiki instruction guard, security upgrade
+- Security (5): repo security scan, public-repo IP audit, wiki secret audit, wiki instruction guard, security upgrade
 - Research (3): Perplexity integration, expert interviewer, incorporating research
 - Experimental (1): self-prompting
 
